@@ -31,7 +31,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.train">
+  <component name="RunManager" selected="Python.rename">
     <configuration name="img" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="multiple_fruits" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -139,9 +139,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.rename" />
         <item itemvalue="Python.train" />
         <item itemvalue="Python.test" />
-        <item itemvalue="Python.rename" />
         <item itemvalue="Python.meno" />
         <item itemvalue="Python.img" />
       </list>

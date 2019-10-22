@@ -25,9 +25,12 @@ fruits = {
     'kiwi':3,
     'pinea':4,
     'mango':5,
-    'peach':6
+    'peach':6,
+    'blueberry':7,
+    'orange':8,
+    'grape_white': 9
 }
-class_name= ['apple', 'banana', 'plum', 'kiwi', 'pinea', 'mango','peach']
+class_name= ['apple', 'banana', 'plum', 'kiwi', 'pinea', 'mango','peach', 'blueberry', 'orange', 'grape_white']
 t=len(class_name)
 print(t)
 #sys.exit()
