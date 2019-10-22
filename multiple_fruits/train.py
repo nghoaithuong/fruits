@@ -23,9 +23,15 @@ fruits = {
     'banana':1,
     'plum':2,
     'kiwi':3,
-    'pinea':4
+    'pinea':4,
+    'mango':5,
+    'peach':6
 }
-class_name= ['apple', 'banana', 'plum', 'kiwi', 'pinea']
+class_name= ['apple', 'banana', 'plum', 'kiwi', 'pinea', 'mango','peach']
+t=len(class_name)
+print(t)
+#sys.exit()
+
 nrows = 50
 ncolumns = 50
 channels = 3
@@ -90,7 +96,7 @@ model = keras.Sequential(
         keras.layers.Flatten(),
         keras.layers.Dropout(0.5),
         keras.layers.Dense(512, activation='relu'),
-        keras.layers.Dense(5, activation='softmax')
+        keras.layers.Dense(t, activation='softmax')
     ]
 )
 model.compile(optimizer= 'adam', loss='sparse_categorical_crossentropy', metrics=['acc'])
@@ -127,7 +133,7 @@ plt.show()
 #evaluate accuracy
 
 #make predictions
-x_test, y_test = read_and_process_image(test_images[0:12])
+x_test, y_test = read_and_process_image(test_images[0:15])
 print(y_test)
 #sys.exit()
 X = np.array(x_test)
@@ -164,9 +170,9 @@ def plot_value_array(i, predictions_array, true_label):
     predictions_array, true_label = predictions_array, true_label[i]
     plt.grid(False)
     plt.grid(False)
-    plt.xticks(range(3))
+    plt.xticks(range(t))
     plt.yticks([])
-    thisplot=plt.bar(range(3), predictions_array, color="#777777")
+    thisplot=plt.bar(range(t), predictions_array, color="#777777")
     plt.ylim([0,1])
     predict_label = np.argmax(predictions_array)
     thisplot[predict_label].set_color('red')
@@ -175,7 +181,7 @@ def plot_value_array(i, predictions_array, true_label):
 
 #plot several images with their predictions
 num_rows=3
-num_cols=4
+num_cols=5
 num_images=num_rows*num_cols
 plt.figure(figsize=(2*2*num_cols, 2*num_rows))
 for i in range(num_images):
